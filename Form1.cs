@@ -13,30 +13,18 @@ namespace TestDB1
         {
             InitializeComponent();
         }
+        Connectors Connector = new Connectors();
 
-        public SqlConnection Connector;
-        public string ConnetionString;
+        public void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
-        public void ConnectToDB()
-        {
-            ConnetionString = @"Data Source=DKONZERSKY-ASUS;Initial Catalog=TestDB;User ID=sa;Password=Detroit254!";
-            Connector = new SqlConnection(ConnetionString);
-            Connector.Open();
-        }
-
-        public void DisconnectFromDB()
-        {
-            Connector.Close();
-        }
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConnectToDB();
+            Connector.ConnectToDB();
             MessageBox.Show("Connection Open  !");
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DisconnectFromDB();
+            Connector.DisconnectFromDB();
             MessageBox.Show("Connection Close  !");
         } 
     }

@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace TestDB1
 {
-    internal static class Program
+    internal static class TestDB1
     {
         /// <summary>
         /// Главная точка входа для приложения.
