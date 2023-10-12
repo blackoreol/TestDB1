@@ -48,12 +48,6 @@ namespace TestDB1
             {
                 MessageBox.Show("Неверные логин или пароль");
             }
-            //Conn.DisconnectFromDB();
-
-            //{               
-            //   ProgramFormOpen();
-            //   this.Close();
-            //}
         }
 
         public void ProgramFormOpen()
