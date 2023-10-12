@@ -18,7 +18,7 @@ namespace TestDB1
             InitializeComponent();
             Connector.ConnectToDB();
 
-            string query = "SELECT * FROM dbo.Domains";
+            string query = "SELECT * FROM dbo.Domains ORDER BY days_left";
             SqlCommand command = new SqlCommand();
             command.Connection = Connector.Connector;
             command.CommandType = CommandType.Text;
@@ -32,7 +32,7 @@ namespace TestDB1
             {
                 data.Add(new string[3]);
                 data[data.Count - 1][0] = reader[0].ToString();
-               data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
                 data[data.Count - 1][2] = reader[2].ToString();
             }
             reader.Close();
@@ -41,20 +41,10 @@ namespace TestDB1
             foreach (string[] i in data)
                 dataGridView1.Rows.Add(i);
 
-            //           if (reader.Read() == true)
-            //           {
-
-            //           }
-            //            else
-            //           {
-            //               MessageBox.Show("Неверные логин или пароль");
-            //           }
 
 
 
         }
-
-                        // Тянем методы из класса Connectors
 
         private void updateToolStripMenuItem1_Click(object sender, EventArgs e)
         {
