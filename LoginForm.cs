@@ -25,14 +25,14 @@ namespace TestDB1
         public void button1_Click(object sender, EventArgs e)
         {
             Connectors Conn = new Connectors();
-
+            Conn.ConnectToDB();
             login = textBox1.Text;
             password = textBox2.Text;
-            SqlConnection sqlConnection = new SqlConnection(@"Data Source=DKONZERSKY-ASUS;Initial Catalog=TestDB;User ID=sa;Password=Detroit254!");
-            sqlConnection.Open();
+            //SqlConnection sqlConnection = new SqlConnection(Conn.ConnetionString);
+            //sqlConnection.Open();
             string query = "Select * from dbo.Users Where login = @login and password = @password";
             SqlCommand command = new SqlCommand();
-            command.Connection = sqlConnection;
+            command.Connection = Conn.Connector;
             command.CommandType = CommandType.Text;
             command.CommandText = query;
             command.Parameters.AddWithValue("@login", login);
@@ -46,7 +46,7 @@ namespace TestDB1
             }
             else
             {
-                MessageBox.Show("Email or/and Password is/are invalid. Please try again");
+                MessageBox.Show("Неверные логин или пароль");
             }
             //Conn.DisconnectFromDB();
 
