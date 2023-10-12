@@ -28,8 +28,6 @@ namespace TestDB1
             Conn.ConnectToDB();
             login = textBox1.Text;
             password = textBox2.Text;
-            //SqlConnection sqlConnection = new SqlConnection(Conn.ConnetionString);
-            //sqlConnection.Open();
             string query = "Select * from dbo.Users Where login = @login and password = @password";
             SqlCommand command = new SqlCommand();
             command.Connection = Conn.Connector;
