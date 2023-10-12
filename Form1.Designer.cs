@@ -38,8 +38,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.domain = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.connectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -47,6 +45,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.domain_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.days_left = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -63,7 +64,7 @@
             this.запросыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(399, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(399, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -135,8 +136,9 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.domain,
-            this.date});
+            this.domain_name,
+            this.date,
+            this.days_left});
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -144,20 +146,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(394, 387);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // domain
-            // 
-            this.domain.HeaderText = "domain";
-            this.domain.MinimumWidth = 6;
-            this.domain.Name = "domain";
-            this.domain.ReadOnly = true;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "date";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -215,6 +203,27 @@
             this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 6;
             // 
+            // domain_name
+            // 
+            this.domain_name.HeaderText = "domain_name";
+            this.domain_name.MinimumWidth = 6;
+            this.domain_name.Name = "domain_name";
+            this.domain_name.ReadOnly = true;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "date";
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // days_left
+            // 
+            this.days_left.HeaderText = "days_left";
+            this.days_left.MinimumWidth = 6;
+            this.days_left.Name = "days_left";
+            this.days_left.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -254,8 +263,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource connectorsBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn domain;
+        private System.Windows.Forms.DataGridViewTextBoxColumn domain_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn days_left;
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
@@ -18,21 +19,37 @@ namespace TestDB1
             Connector.ConnectToDB();
 
 
-            string query = "SELECT * FROM dbo.Domains ORDER BY domain_name";
+            string query = "SELECT * FROM dbo.Domains";
             SqlCommand command = new SqlCommand();
             command.Connection = Connector.Connector;
             command.CommandType = CommandType.Text;
             command.CommandText = query;
 
             SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read() == true)
-            {
 
-            }
-            else
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
             {
-                MessageBox.Show("Неверные логин или пароль");
+                data.Add(new string[3]);
+                data[data.Count - 1][0] = reader[0].ToString();
+               data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
             }
+            reader.Close();
+            Connector.DisconnectFromDB();
+
+            foreach (string[] i in data)
+                dataGridView1.Rows.Add(i);
+
+            //           if (reader.Read() == true)
+            //           {
+
+            //           }
+            //            else
+            //           {
+            //               MessageBox.Show("Неверные логин или пароль");
+            //           }
 
 
 
