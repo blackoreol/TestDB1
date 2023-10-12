@@ -35,7 +35,19 @@ namespace TestDB1
             command.Connection = sqlConnection;
             command.CommandType = CommandType.Text;
             command.CommandText = query;
+            command.Parameters.AddWithValue("@login", login);
+            command.Parameters.AddWithValue("@password", password);
 
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read() == true)
+            {
+                this.Hide();
+                ProgramFormOpen();
+            }
+            else
+            {
+                MessageBox.Show("Email or/and Password is/are invalid. Please try again");
+            }
             //Conn.DisconnectFromDB();
 
             //{               
