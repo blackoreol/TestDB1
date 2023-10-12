@@ -46,5 +46,10 @@ namespace TestDB1
         {
             Connector.ConnectToDB();
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
