@@ -18,7 +18,6 @@ namespace TestDB1
             InitializeComponent();
             Connector.ConnectToDB();
 
-
             string query = "SELECT * FROM dbo.Domains";
             SqlCommand command = new SqlCommand();
             command.Connection = Connector.Connector;
