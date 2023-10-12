@@ -40,10 +40,6 @@ namespace TestDB1
 
             foreach (string[] i in data)
                 dataGridView1.Rows.Add(i);
-
-
-
-
         }
 
         private void updateToolStripMenuItem1_Click(object sender, EventArgs e)

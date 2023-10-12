@@ -20,27 +20,25 @@ namespace TestDB1
             InitializeComponent();
         }
 
-        public string login;
-        public string password;
         public void button1_Click(object sender, EventArgs e)
         {
             Connectors Conn = new Connectors();
             Conn.ConnectToDB();
-            login = textBox1.Text;
-            password = textBox2.Text;
+            //login = textBox1.Text;
+            //password = textBox1.Text;
             string query = "Select * from dbo.Users Where login = @login and password = @password";
             SqlCommand command = new SqlCommand();
             command.Connection = Conn.Connector;
             command.CommandType = CommandType.Text;
             command.CommandText = query;
-            command.Parameters.AddWithValue("@login", login);
-            command.Parameters.AddWithValue("@password", password);
+            command.Parameters.AddWithValue("@login", textBox1.Text);
+            command.Parameters.AddWithValue("@password", textBox1.Text);
 
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read() == true)
             {
                 this.Hide();
-                ProgramFormOpen();
+                ProgramFormOpen();                          
             }
             else
             {
