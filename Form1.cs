@@ -16,6 +16,7 @@ namespace TestDB1
 
         public SqlConnection Connector;
         public string ConnetionString;
+
         public void ConnectToDB()
         {
             ConnetionString = @"Data Source=DKONZERSKY-ASUS;Initial Catalog=TestDB;User ID=sa;Password=Detroit254!";
