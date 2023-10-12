@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace TestDB1
 {
@@ -20,6 +18,5 @@ namespace TestDB1
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-        
     }
 }
