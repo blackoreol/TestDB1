@@ -50,7 +50,7 @@
             this.textBox1.Size = new System.Drawing.Size(150, 22);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Логин";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            //this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox2
             // 

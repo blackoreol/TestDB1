@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TestDB1
@@ -22,13 +24,24 @@ namespace TestDB1
         public string password;
         public void button1_Click(object sender, EventArgs e)
         {
+            Connectors Conn = new Connectors();
+
             login = textBox1.Text;
             password = textBox2.Text;
-            if (login == "1" && password =="2")
-            {
-                ProgramFormOpen();
-                this.Close();
-            }
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=DKONZERSKY-ASUS;Initial Catalog=TestDB;User ID=sa;Password=Detroit254!");
+            sqlConnection.Open();
+            string query = "Select * from dbo.Users Where login = @login and password = @password";
+            SqlCommand command = new SqlCommand();
+            command.Connection = sqlConnection;
+            command.CommandType = CommandType.Text;
+            command.CommandText = query;
+
+            //Conn.DisconnectFromDB();
+
+            //{               
+            //   ProgramFormOpen();
+            //   this.Close();
+            //}
         }
 
         public void ProgramFormOpen()
