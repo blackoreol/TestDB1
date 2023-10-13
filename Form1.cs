@@ -103,7 +103,7 @@ namespace TestDB1
 
                     dataGridView1.Rows.Add(i);
             }
-            else
+            else 
             {
                 MessageBox.Show("hello world");
             }
