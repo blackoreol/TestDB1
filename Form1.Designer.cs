@@ -35,25 +35,25 @@
             this.запросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uPDATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iNSERTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.connectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.domain_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.days_left = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.connectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.menuStrip1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.connectorsBindingSource)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.connectorsBindingSource)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -64,7 +64,7 @@
             this.запросыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(396, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(398, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -95,90 +95,26 @@
             // uPDATEToolStripMenuItem
             // 
             this.uPDATEToolStripMenuItem.Name = "uPDATEToolStripMenuItem";
-            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.uPDATEToolStripMenuItem.Text = "UPDATE";
             // 
             // iNSERTToolStripMenuItem
             // 
             this.iNSERTToolStripMenuItem.Name = "iNSERTToolStripMenuItem";
-            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
             this.iNSERTToolStripMenuItem.Text = "INSERT";
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.tabControl1.Location = new System.Drawing.Point(0, 31);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(399, 419);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 7;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(391, 387);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Список";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.domain_name,
-            this.date,
-            this.days_left});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(394, 387);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // domain_name
-            // 
-            this.domain_name.HeaderText = "domain_name";
-            this.domain_name.MinimumWidth = 6;
-            this.domain_name.Name = "domain_name";
-            this.domain_name.ReadOnly = true;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "date";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // days_left
-            // 
-            this.days_left.HeaderText = "days_left";
-            this.days_left.MinimumWidth = 6;
-            this.days_left.Name = "days_left";
-            this.days_left.ReadOnly = true;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.textBox2);
+            this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(391, 387);
+            this.tabPage2.Size = new System.Drawing.Size(396, 448);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Обновить домен";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -189,6 +125,13 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 9;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(97, 36);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 6;
             // 
             // button1
             // 
@@ -218,17 +161,75 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Домен";
             // 
-            // textBox3
+            // tabPage1
             // 
-            this.textBox3.Location = new System.Drawing.Point(97, 36);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 6;
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(396, 448);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Список";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.domain_name,
+            this.date,
+            this.days_left});
+            this.dataGridView1.Location = new System.Drawing.Point(-4, -4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(400, 452);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // domain_name
+            // 
+            this.domain_name.HeaderText = "domain_name";
+            this.domain_name.MinimumWidth = 6;
+            this.domain_name.Name = "domain_name";
+            this.domain_name.ReadOnly = true;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "date";
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // days_left
+            // 
+            this.days_left.HeaderText = "days_left";
+            this.days_left.MinimumWidth = 6;
+            this.days_left.Name = "days_left";
+            this.days_left.ReadOnly = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.tabControl1.Location = new System.Drawing.Point(0, 31);
+            this.tabControl1.Multiline = true;
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(404, 480);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl1.TabIndex = 7;
+            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(396, 446);
+            this.ClientSize = new System.Drawing.Size(398, 503);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -238,12 +239,12 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.connectorsBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.connectorsBindingSource)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,19 +257,19 @@
         private System.Windows.Forms.ToolStripMenuItem uPDATEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iNSERTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.BindingSource connectorsBindingSource;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource connectorsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn domain_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn days_left;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }
 

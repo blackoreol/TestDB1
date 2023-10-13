@@ -69,5 +69,38 @@ namespace TestDB1
             update_command.ExecuteNonQuery();
             MessageBox.Show("Record Updated Successfully");
         }
+
+        private void tabControl1_Click(object sender, EventArgs e) // Обновление по нажатию на вкладку
+        {
+            if (tabControl1.SelectedTab.Text == "Список")
+            {
+                string query = "SELECT * FROM dbo.Domains ORDER BY days_left";
+                SqlCommand command = new SqlCommand();
+                command.Connection = Connector.Connector;
+                command.CommandType = CommandType.Text;
+                command.CommandText = query;
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                List<string[]> data = new List<string[]>();
+
+                while (reader.Read())
+                {
+                    data.Add(new string[3]);
+                    data[data.Count - 1][0] = reader[0].ToString();
+                    data[data.Count - 1][1] = reader[1].ToString();
+                    data[data.Count - 1][2] = reader[2].ToString();
+                }
+                reader.Close();
+
+
+                foreach (string[] i in data)
+                    dataGridView1.Rows.Add(i);
+            }
+            else
+            {
+                MessageBox.Show("hello world");
+            }
+        }
     }
 }
