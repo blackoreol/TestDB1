@@ -38,22 +38,22 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.connectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.domain_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.days_left = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.domain_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.days_left = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.connectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.connectorsBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.connectorsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -64,7 +64,7 @@
             this.запросыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(399, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(396, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -95,13 +95,13 @@
             // uPDATEToolStripMenuItem
             // 
             this.uPDATEToolStripMenuItem.Name = "uPDATEToolStripMenuItem";
-            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.uPDATEToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.uPDATEToolStripMenuItem.Text = "UPDATE";
             // 
             // iNSERTToolStripMenuItem
             // 
             this.iNSERTToolStripMenuItem.Name = "iNSERTToolStripMenuItem";
-            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(146, 26);
+            this.iNSERTToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.iNSERTToolStripMenuItem.Text = "INSERT";
             // 
             // tabControl1
@@ -114,7 +114,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 419);
+            this.tabControl1.Size = new System.Drawing.Size(399, 419);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 7;
             // 
@@ -124,7 +124,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 387);
+            this.tabPage1.Size = new System.Drawing.Size(391, 387);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Список";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -147,6 +147,27 @@
             this.dataGridView1.Size = new System.Drawing.Size(394, 387);
             this.dataGridView1.TabIndex = 0;
             // 
+            // domain_name
+            // 
+            this.domain_name.HeaderText = "domain_name";
+            this.domain_name.MinimumWidth = 6;
+            this.domain_name.Name = "domain_name";
+            this.domain_name.ReadOnly = true;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "date";
+            this.date.MinimumWidth = 6;
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // days_left
+            // 
+            this.days_left.HeaderText = "days_left";
+            this.days_left.MinimumWidth = 6;
+            this.days_left.Name = "days_left";
+            this.days_left.ReadOnly = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.textBox2);
@@ -157,7 +178,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 387);
+            this.tabPage2.Size = new System.Drawing.Size(391, 387);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Обновить домен";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -177,6 +198,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Отправить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -203,31 +225,10 @@
             this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 6;
             // 
-            // domain_name
-            // 
-            this.domain_name.HeaderText = "domain_name";
-            this.domain_name.MinimumWidth = 6;
-            this.domain_name.Name = "domain_name";
-            this.domain_name.ReadOnly = true;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "date";
-            this.date.MinimumWidth = 6;
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // days_left
-            // 
-            this.days_left.HeaderText = "days_left";
-            this.days_left.MinimumWidth = 6;
-            this.days_left.Name = "days_left";
-            this.days_left.ReadOnly = true;
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(399, 446);
+            this.ClientSize = new System.Drawing.Size(396, 446);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -240,9 +241,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.connectorsBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.connectorsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
