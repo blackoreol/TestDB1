@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace TestDB1
 {
@@ -17,6 +18,7 @@ namespace TestDB1
             ConnetionString = @"Data Source=DKONZERSKY-ASUS;Initial Catalog=TestDB;User ID=sa;Password=Detroit254!";
             Connector = new SqlConnection(ConnetionString);
             Connector.Open();
+            
         }
 
         public void DisconnectFromDB()

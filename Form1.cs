@@ -13,7 +13,8 @@ namespace TestDB1
 
     public partial class Form1 : Form
     {
-        Connectors Connector = new Connectors();   // Указываем класс Connectors
+        Connectors Connector = new Connectors(); // Указываем класс Connectors
+        Updater Updaters = new Updater();        // Подключаю обновление из БД
         public Form1()
         {
             InitializeComponent();   
@@ -74,16 +75,20 @@ namespace TestDB1
         {
             if (tabControl1.SelectedTab.Text == "Список")
             {
+                dataGridView1.Rows.Clear();
+                Updater upd = new Updater();
+
+                upd.Update();
+
                 string query = "SELECT * FROM dbo.Domains ORDER BY days_left";
-                SqlCommand command = new SqlCommand();
-                command.Connection = Connector.Connector;
-                command.CommandType = CommandType.Text;
-                command.CommandText = query;
-
+                SqlCommand command = new SqlCommand
+                {
+                    Connection = Connector.Connector,
+                    CommandType = CommandType.Text,
+                    CommandText = query
+                };
                 SqlDataReader reader = command.ExecuteReader();
-
                 List<string[]> data = new List<string[]>();
-
                 while (reader.Read())
                 {
                     data.Add(new string[3]);
@@ -93,8 +98,9 @@ namespace TestDB1
                 }
                 reader.Close();
 
-
                 foreach (string[] i in data)
+
+
                     dataGridView1.Rows.Add(i);
             }
             else
