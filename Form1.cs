@@ -30,7 +30,6 @@ namespace TestDB1
 
         public void updateToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DataManager dataManager = new DataManager();
             DatabaseManager dbManager = new DatabaseManager();
             dbManager.CloseConnection();
         }
@@ -44,7 +43,6 @@ namespace TestDB1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataManager dataManager = new DataManager();
             DatabaseManager dbManager = new DatabaseManager();
             string update_query = "update dbo.Domains set domain_name=@domain_n,days_left=@days_l where domain_name=@domain_n";
             dbManager.OpenConnection();
