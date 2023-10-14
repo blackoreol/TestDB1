@@ -13,11 +13,12 @@ namespace TestDB1
     {
         public string connectionString = @"Data Source=DKONZERSKY-ASUS;Initial Catalog=TestDB;User ID=sa;Password=Detroit254!";
 
-        private SqlConnection Connection { get; set; }
+        public SqlConnection Connection { get; set; }
+        public SqlConnection Connector;
 
         public DatabaseManager()
         {
-            Connection = new SqlConnection(connectionString);
+            Connection = new SqlConnection(connectionString); // СЮДА КИДАЮТСЯ ПАРАМЕТРЫ СОЕДИНЕНИЯ
         }
 
         public void OpenConnection()

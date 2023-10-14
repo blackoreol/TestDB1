@@ -22,13 +22,11 @@ namespace TestDB1
 
         public void button1_Click(object sender, EventArgs e)
         {
-            Connectors Conn = new Connectors();
-            Conn.ConnectToDB();
-            //login = textBox1.Text;
-            //password = textBox1.Text;
+            DatabaseManager dbManager = new DatabaseManager();
+            dbManager.OpenConnection();
             string query = "Select * from dbo.Users Where login = @login and password = @password";
             SqlCommand command = new SqlCommand();
-            command.Connection = Conn.Connector;
+            command.Connection = dbManager.Connection;
             command.CommandType = CommandType.Text;
             command.CommandText = query;
             command.Parameters.AddWithValue("@login", textBox1.Text);

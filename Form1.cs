@@ -13,9 +13,7 @@ namespace TestDB1
 
     public partial class Form1 : Form
 
-    {
-        Connectors Connector = new Connectors(); // Указываем класс Connectors   
-        string connectionString = @"Data Source=DKONZERSKY-ASUS;Initial Catalog=TestDB;User ID=sa;Password=Detroit254!";
+    { 
 
         public Form1()
         {
@@ -24,7 +22,6 @@ namespace TestDB1
             DatabaseManager dbManager = new DatabaseManager();
             dbManager.OpenConnection();
             List<string[]> data = dataManager.GetDataFromDatabase();
-
             foreach (string[] row in data)
             {
                 dataGridView1.Rows.Add(row);
@@ -40,16 +37,19 @@ namespace TestDB1
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Connector.DisconnectFromDB();
+            DatabaseManager dbManager = new DatabaseManager();
+            dbManager.OpenConnection();
             Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DataManager dataManager = new DataManager();
+            DatabaseManager dbManager = new DatabaseManager();
             string update_query = "update dbo.Domains set domain_name=@domain_n,days_left=@days_l where domain_name=@domain_n";
-            Connector.ConnectToDB();
+            dbManager.OpenConnection();
             SqlCommand update_command = new SqlCommand();
-            update_command.Connection = Connector.Connector;
+            update_command.Connection = dbManager.Connection;
             update_command.CommandType = CommandType.Text;
             update_command.CommandText = update_query;
             update_command.Parameters.AddWithValue("@domain_n", textBox3.Text);
