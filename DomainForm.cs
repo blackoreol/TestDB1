@@ -11,12 +11,12 @@ namespace TestDB1
 {
 
 
-    public partial class Form1 : Form
+    public partial class DomainForm : Form
 
     {
         DataManager dataManager = new DataManager();
         DatabaseManager dbManager = new DatabaseManager();
-        public Form1()
+        public DomainForm()
         {
             InitializeComponent();
             dbManager.OpenConnection();

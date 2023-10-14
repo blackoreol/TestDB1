@@ -1,6 +1,6 @@
 ﻿namespace TestDB1
 {
-    partial class Form1
+    partial class DomainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.

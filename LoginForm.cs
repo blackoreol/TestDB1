@@ -46,7 +46,7 @@ namespace TestDB1
 
         public void ProgramFormOpen()
         {
-            Form1 form1 = new Form1();
+            DomainForm form1 = new DomainForm();
             form1.ShowDialog();
         }
 
