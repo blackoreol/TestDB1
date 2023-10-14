@@ -20,7 +20,7 @@ namespace TestDB1
 
         public DatabaseManager()
         {
-            Connection = new SqlConnection(connectionString); // СЮДА КИДАЮТСЯ ПАРАМЕТРЫ СОЕДИНЕНИЯ
+            Connection = new SqlConnection(connectionString); // СЮДА КИДАЮТСЯ ПАРАМЕТРЫ СОЕДИНЕНИЯ 
         }
 
         public void OpenConnection()
