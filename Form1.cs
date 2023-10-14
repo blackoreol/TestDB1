@@ -12,43 +12,30 @@ namespace TestDB1
 
 
     public partial class Form1 : Form
+
     {
-        Connectors Connector = new Connectors(); // Указываем класс Connectors
-        Updater Updaters = new Updater();        // Подключаю обновление из БД
+        Connectors Connector = new Connectors(); // Указываем класс Connectors   
+        string connectionString = @"Data Source=DKONZERSKY-ASUS;Initial Catalog=TestDB;User ID=sa;Password=Detroit254!";
+
         public Form1()
         {
-            InitializeComponent();   
-            Connector.ConnectToDB();
-            
-            // Запуск соединения из класса Connectors
+            InitializeComponent();
+            DataManager dataManager = new DataManager();
+            DatabaseManager dbManager = new DatabaseManager();
+            dbManager.OpenConnection();
+            List<string[]> data = dataManager.GetDataFromDatabase();
 
-            string query = "SELECT * FROM dbo.Domains ORDER BY days_left";
-            SqlCommand command = new SqlCommand();
-            command.Connection = Connector.Connector;
-            command.CommandType = CommandType.Text;
-            command.CommandText = query;
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            List<string[]> data = new List<string[]>();
-
-            while (reader.Read())
+            foreach (string[] row in data)
             {
-                data.Add(new string[3]);
-                data[data.Count - 1][0] = reader[0].ToString();
-                data[data.Count - 1][1] = reader[1].ToString();
-                data[data.Count - 1][2] = reader[2].ToString();
+                dataGridView1.Rows.Add(row);
             }
-            reader.Close();
-            
-
-            foreach (string[] i in data)
-                dataGridView1.Rows.Add(i);
         }
 
-        private void updateToolStripMenuItem1_Click(object sender, EventArgs e)
+        public void updateToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Connector.ConnectToDB();
+            DataManager dataManager = new DataManager();
+            DatabaseManager dbManager = new DatabaseManager();
+            dbManager.CloseConnection();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -76,37 +63,16 @@ namespace TestDB1
             if (tabControl1.SelectedTab.Text == "Список")
             {
                 dataGridView1.Rows.Clear();
-                Updater upd = new Updater();
+                DataManager dataManager = new DataManager();
+                List<string[]> data = dataManager.GetDataFromDatabase();
 
-                upd.Update();
-
-                string query = "SELECT * FROM dbo.Domains ORDER BY days_left";
-                SqlCommand command = new SqlCommand
+                foreach (string[] row in data)
                 {
-                    Connection = Connector.Connector,
-                    CommandType = CommandType.Text,
-                    CommandText = query
-                };
-                SqlDataReader reader = command.ExecuteReader();
-                List<string[]> data = new List<string[]>();
-                while (reader.Read())
-                {
-                    data.Add(new string[3]);
-                    data[data.Count - 1][0] = reader[0].ToString();
-                    data[data.Count - 1][1] = reader[1].ToString();
-                    data[data.Count - 1][2] = reader[2].ToString();
+                    dataGridView1.Rows.Add(row);
                 }
-                reader.Close();
 
-                foreach (string[] i in data)
-
-
-                    dataGridView1.Rows.Add(i);
-            }
-            else 
-            {
-                MessageBox.Show("hello world");
-            }
+            }       
         }
     }
+
 }

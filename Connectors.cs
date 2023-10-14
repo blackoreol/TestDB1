@@ -8,7 +8,9 @@ using System.Configuration;
 
 namespace TestDB1
 {
+    
     public class Connectors
+
     {
         public SqlConnection Connector;
         public string ConnetionString;
