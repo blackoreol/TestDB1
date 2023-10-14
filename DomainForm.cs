@@ -9,8 +9,6 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TestDB1
 {
-
-
     public partial class DomainForm : Form
 
     {
@@ -69,9 +67,7 @@ namespace TestDB1
                 {
                     dataGridView1.Rows.Add(row);
                 }
-
             }       
         }
     }
-
 }
