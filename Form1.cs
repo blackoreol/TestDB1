@@ -13,13 +13,12 @@ namespace TestDB1
 
     public partial class Form1 : Form
 
-    { 
-
+    {
+        DataManager dataManager = new DataManager();
+        DatabaseManager dbManager = new DatabaseManager();
         public Form1()
         {
             InitializeComponent();
-            DataManager dataManager = new DataManager();
-            DatabaseManager dbManager = new DatabaseManager();
             dbManager.OpenConnection();
             List<string[]> data = dataManager.GetDataFromDatabase();
             foreach (string[] row in data)
@@ -30,20 +29,23 @@ namespace TestDB1
 
         public void updateToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DatabaseManager dbManager = new DatabaseManager();
-            dbManager.CloseConnection();
+            dataGridView1.Rows.Clear();
+            dataManager.GetDataFromDatabase();
+            List<string[]> data = dataManager.GetDataFromDatabase();
+            foreach (string[] row in data)
+            {
+                dataGridView1.Rows.Add(row);
+            }
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            DatabaseManager dbManager = new DatabaseManager();
-            dbManager.OpenConnection();
+            dbManager.CloseConnection();
             Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DatabaseManager dbManager = new DatabaseManager();
             string update_query = "update dbo.Domains set domain_name=@domain_n,days_left=@days_l where domain_name=@domain_n";
             dbManager.OpenConnection();
             SqlCommand update_command = new SqlCommand();
@@ -61,7 +63,6 @@ namespace TestDB1
             if (tabControl1.SelectedTab.Text == "Список")
             {
                 dataGridView1.Rows.Clear();
-                DataManager dataManager = new DataManager();
                 List<string[]> data = dataManager.GetDataFromDatabase();
 
                 foreach (string[] row in data)
