@@ -5,7 +5,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Configuration;
 
 
 namespace TestDB1
@@ -16,7 +15,7 @@ namespace TestDB1
         
         public string connectionString = @"Data Source=DKONZERSKY-ASUS;Initial Catalog=TestDB;User ID=sa;Password=Detroit254!";
 
-        public SqlConnection Connection { get; set; }
+        public SqlConnection Connection;
 
         public DatabaseManager()
         {
@@ -44,7 +43,7 @@ namespace TestDB1
     }
     public class DataManager
     {
-        private DatabaseManager DBManager { get; set; }
+        private DatabaseManager DBManager;
 
         public DataManager()
         {
