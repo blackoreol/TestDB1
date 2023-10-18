@@ -66,12 +66,6 @@ namespace TestDB1
     public class DataChecker
     {
         public string connectionString = @"Data Source=DKONZERSKY-ASUS;Initial Catalog=TestDB;User ID=sa;Password=Detroit254!";
-
-        //public DataChecker()
-        //{
-            //this.connectionString = connectionString;
-        //}
-
         public bool CheckValueInDatabase(string tableName, string columnName, string valueToCheck)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
