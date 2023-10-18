@@ -81,7 +81,7 @@
             this.updateToolStripMenuItem1.Name = "updateToolStripMenuItem1";
             this.updateToolStripMenuItem1.Size = new System.Drawing.Size(218, 26);
             this.updateToolStripMenuItem1.Text = "Обновить данные";
-            this.updateToolStripMenuItem1.Click += new System.EventHandler(this.updateToolStripMenuItem1_Click);
+            this.updateToolStripMenuItem1.Click += new System.EventHandler(this.UpdateToolStripMenuItem1_Click);
             // 
             // запросыToolStripMenuItem
             // 
@@ -141,7 +141,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Отправить";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label2
             // 
@@ -224,7 +224,7 @@
             this.tabControl1.Size = new System.Drawing.Size(404, 480);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 7;
-            this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
+            this.tabControl1.Click += new System.EventHandler(this.TabControl1_Click);
             // 
             // Form1
             // 
