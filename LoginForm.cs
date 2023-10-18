@@ -20,15 +20,17 @@ namespace TestDB1
             InitializeComponent();
         }
 
-        public void button1_Click(object sender, EventArgs e)
+        public void Button1_Click(object sender, EventArgs e)
         {
             DatabaseManager dbManager = new DatabaseManager();
             dbManager.OpenConnection();
             string query = "Select * from dbo.Users Where login = @login and password = @password";
-            SqlCommand command = new SqlCommand();
-            command.Connection = dbManager.Connection;
-            command.CommandType = CommandType.Text;
-            command.CommandText = query;
+            SqlCommand command = new SqlCommand
+            {
+                Connection = dbManager.Connection,
+                CommandType = CommandType.Text,
+                CommandText = query
+            };
             command.Parameters.AddWithValue("@login", textBox1.Text);
             command.Parameters.AddWithValue("@password", textBox1.Text);
 
@@ -50,11 +52,11 @@ namespace TestDB1
             form1.ShowDialog();
         }
 
-        private void textBox1_Click(object sender, System.EventArgs e)
+        private void TextBox1_Click(object sender, System.EventArgs e)
         {
             textBox1.Clear();
         }
-        private void textBox2_Click(object sender, System.EventArgs e)
+        private void TextBox2_Click(object sender, System.EventArgs e)
         {
             textBox2.Clear();
         }

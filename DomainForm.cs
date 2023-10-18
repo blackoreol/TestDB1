@@ -100,5 +100,20 @@ namespace TestDB1
                 }
             }       
         }
+
+        private void TextBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
+
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+        }
+
+        private void TextBox3_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+        }
     }
 }

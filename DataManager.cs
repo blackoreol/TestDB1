@@ -46,7 +46,7 @@ namespace TestDB1
         }
         public List<string[]> GetDataFromDatabase()
         {
-            //string query2 = "SELECT * FROM dbo.Domains ORDER BY days_left";
+            //↓ Обрезаем дату и приводим в нормальный вид
             string query = "SELECT domain_name, LEFT(expire_date, LEN(expire_date) - 8) AS expire_date, days_left FROM dbo.Domains ORDER BY days_left";
             SqlDataReader reader = DBManager.ExecuteQuery(query);
             List<string[]> data = new List<string[]>();

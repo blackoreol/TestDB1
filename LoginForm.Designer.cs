@@ -41,7 +41,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Вход";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // textBox1
             // 
@@ -50,7 +50,7 @@
             this.textBox1.Size = new System.Drawing.Size(150, 22);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Логин";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            this.textBox1.Click += new System.EventHandler(this.TextBox1_Click);
             // 
             // textBox2
             // 
@@ -60,7 +60,7 @@
             this.textBox2.Size = new System.Drawing.Size(150, 22);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "пароль";
-            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
+            this.textBox2.Click += new System.EventHandler(this.TextBox2_Click);
             // 
             // LoginForm
             // 
