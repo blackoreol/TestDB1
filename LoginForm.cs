@@ -18,6 +18,8 @@ namespace TestDB1
         public LoginForm()
         {
             InitializeComponent();
+            loginForm_textBox1.Clear();
+            loginForm_textBox2.Clear();
         }
 
         public void Button1_Click(object sender, EventArgs e)
@@ -50,15 +52,6 @@ namespace TestDB1
         {
             DomainForm form1 = new DomainForm();
             form1.ShowDialog();
-        }
-
-        private void LoginForm_TextBox1_Click(object sender, System.EventArgs e)
-        {
-            loginForm_textBox1.Clear();
-        }
-        private void LoginForm_TextBox2_Click(object sender, System.EventArgs e)
-        {
-            loginForm_textBox2.Clear();
         }
     }
 }

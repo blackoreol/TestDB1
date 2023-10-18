@@ -44,17 +44,15 @@ namespace TestDB1
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string update_query = "update dbo.Domains set domain_name=@domain_n,days_left=@days_l,expire_date=@date_n where domain_name=@domain_n";
-            string insert_query = "INSERT INTO dbo.Domains(domain_name,days_left,expire_date) VALUES (@domain_n,@days_l,@date_n)";
+            string update_query = "update dbo.Domains set domain_name=@domain_n,expire_date=@date_n where domain_name=@domain_n";
+            string insert_query = "INSERT INTO dbo.Domains(domain_name,expire_date) VALUES (@domain_n,@date_n)";
             dbManager.OpenConnection();
             DataChecker dataChecker = new DataChecker();
             string tableName = "dbo.Domains";
             string columnName = "domain_name";
 
-            string valueToCheck = DomainForm_textBox3.Text; // Замените на нужное значение
-
+            string valueToCheck = DomainForm_DomainName_textBox3.Text; // Замените на нужное значение
             bool found = dataChecker.CheckValueInDatabase(tableName, columnName, valueToCheck);
-
             if (found)
             {
                 MessageBox.Show($"Значение '{valueToCheck}' найдено в таблице {tableName}.");
@@ -64,9 +62,8 @@ namespace TestDB1
                     CommandType = CommandType.Text,
                     CommandText = update_query
                 };
-                update_command.Parameters.AddWithValue("@domain_n", DomainForm_textBox3.Text);
-                update_command.Parameters.AddWithValue("@days_l", DomainForm_textBox2.Text);
-                update_command.Parameters.AddWithValue("@date", DomainForm_textBox2.Text);
+                update_command.Parameters.AddWithValue("@domain_n", DomainForm_DomainName_textBox3.Text);
+                update_command.Parameters.AddWithValue("@date_n", DomainForm_Date.Value);
                 update_command.ExecuteNonQuery();
                 MessageBox.Show("Обновлено успешно");
             }
@@ -78,9 +75,8 @@ namespace TestDB1
                     CommandType = CommandType.Text,
                     CommandText = insert_query
                 };
-                insert_command.Parameters.AddWithValue("@domain_n", DomainForm_textBox3.Text);
-                insert_command.Parameters.AddWithValue("@days_l", DomainForm_textBox2.Text);
-                insert_command.Parameters.AddWithValue("@date_n", DomainForm_textBox1.Text);
+                insert_command.Parameters.AddWithValue("@domain_n", DomainForm_DomainName_textBox3.Text);
+                insert_command.Parameters.AddWithValue("@date_n", DomainForm_Date.Value);
                 insert_command.ExecuteNonQuery();            
                 MessageBox.Show($"Ошибка: Значение '{valueToCheck}' не найдено в таблице.Добавлено.");
             }
@@ -99,20 +95,6 @@ namespace TestDB1
                     dataGridView1.Rows.Add(row);
                 }
             }       
-        }
-
-        private void DomainForm_TextBox1_Click(object sender, EventArgs e)
-        {
-            DomainForm_textBox1.Clear();
-        }
-        private void DomainForm_TextBox3_Click(object sender, EventArgs e)
-        {
-            DomainForm_textBox2.Clear();
-        }
-
-        private void DomainForm_TextBox2_Click(object sender, EventArgs e)
-        {
-            DomainForm_textBox2.Clear();
         }
     }
 }

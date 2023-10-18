@@ -28,21 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.connectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.запросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uPDATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iNSERTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.connectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.DomainForm_textBox1 = new System.Windows.Forms.TextBox();
+            this.DomainForm_Date = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.DomainForm_textBox2 = new System.Windows.Forms.TextBox();
-            this.DomainForm_textBox3 = new System.Windows.Forms.TextBox();
+            this.DomainForm_DomainName_textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -51,7 +47,6 @@
             this.days_left = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.connectorsBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -108,12 +103,10 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.DomainForm_textBox1);
+            this.tabPage2.Controls.Add(this.DomainForm_Date);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.DomainForm_textBox2);
-            this.tabPage2.Controls.Add(this.DomainForm_textBox3);
+            this.tabPage2.Controls.Add(this.DomainForm_DomainName_textBox3);
             this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
@@ -123,42 +116,34 @@
             this.tabPage2.Text = "Обновить домен";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // DomainForm_textBox1
+            // DomainForm_Date
             // 
-            this.DomainForm_textBox1.Location = new System.Drawing.Point(97, 110);
-            this.DomainForm_textBox1.Name = "DomainForm_textBox1";
-            this.DomainForm_textBox1.Size = new System.Drawing.Size(100, 22);
-            this.DomainForm_textBox1.TabIndex = 12;
-            this.DomainForm_textBox1.Click += new System.EventHandler(this.DomainForm_TextBox1_Click);
+            this.DomainForm_Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DomainForm_Date.Location = new System.Drawing.Point(95, 75);
+            this.DomainForm_Date.Name = "DomainForm_Date";
+            this.DomainForm_Date.Size = new System.Drawing.Size(100, 22);
+            this.DomainForm_Date.TabIndex = 15;
+            this.DomainForm_Date.Value = new System.DateTime(2023, 10, 18, 0, 0, 0, 0);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 110);
+            this.label1.Location = new System.Drawing.Point(44, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 16);
             this.label1.TabIndex = 11;
             this.label1.Text = "Дата";
             // 
-            // DomainForm_textBox2
+            // DomainForm_DomainName_textBox3
             // 
-            this.DomainForm_textBox2.Location = new System.Drawing.Point(97, 73);
-            this.DomainForm_textBox2.Name = "DomainForm_textBox2";
-            this.DomainForm_textBox2.Size = new System.Drawing.Size(100, 22);
-            this.DomainForm_textBox2.TabIndex = 9;
-            this.DomainForm_textBox2.Click += new System.EventHandler(this.DomainForm_TextBox2_Click);
-            // 
-            // DomainForm_textBox3
-            // 
-            this.DomainForm_textBox3.Location = new System.Drawing.Point(97, 36);
-            this.DomainForm_textBox3.Name = "DomainForm_textBox3";
-            this.DomainForm_textBox3.Size = new System.Drawing.Size(100, 22);
-            this.DomainForm_textBox3.TabIndex = 6;
-            this.DomainForm_textBox3.TextChanged += new System.EventHandler(this.DomainForm_TextBox3_Click);
+            this.DomainForm_DomainName_textBox3.Location = new System.Drawing.Point(95, 35);
+            this.DomainForm_DomainName_textBox3.Name = "DomainForm_DomainName_textBox3";
+            this.DomainForm_DomainName_textBox3.Size = new System.Drawing.Size(100, 22);
+            this.DomainForm_DomainName_textBox3.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(97, 149);
+            this.button1.Location = new System.Drawing.Point(95, 115);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 8;
@@ -166,19 +151,10 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 16);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Дни";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 39);
+            this.label3.Location = new System.Drawing.Point(27, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 16);
             this.label3.TabIndex = 7;
@@ -262,7 +238,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.connectorsBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -280,12 +255,9 @@
         private System.Windows.Forms.ToolStripMenuItem uPDATEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iNSERTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem1;
-        private System.Windows.Forms.BindingSource connectorsBindingSource;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox DomainForm_textBox2;
-        private System.Windows.Forms.TextBox DomainForm_textBox3;
+        private System.Windows.Forms.TextBox DomainForm_DomainName_textBox3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -294,7 +266,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn days_left;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox DomainForm_textBox1;
+        private System.Windows.Forms.DateTimePicker DomainForm_Date;
     }
 }
 

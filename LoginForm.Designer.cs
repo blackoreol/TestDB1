@@ -50,7 +50,6 @@
             this.loginForm_textBox1.Size = new System.Drawing.Size(150, 22);
             this.loginForm_textBox1.TabIndex = 1;
             this.loginForm_textBox1.Text = "Логин";
-            this.loginForm_textBox1.Click += new System.EventHandler(this.LoginForm_TextBox1_Click);
             // 
             // loginForm_textBox2
             // 
@@ -60,7 +59,6 @@
             this.loginForm_textBox2.Size = new System.Drawing.Size(150, 22);
             this.loginForm_textBox2.TabIndex = 2;
             this.loginForm_textBox2.Text = "пароль";
-            this.loginForm_textBox2.Click += new System.EventHandler(this.LoginForm_TextBox2_Click);
             // 
             // LoginForm
             // 

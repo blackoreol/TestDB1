@@ -46,18 +46,40 @@ namespace TestDB1
         }
         public List<string[]> GetDataFromDatabase()
         {
-            //↓ Обрезаем дату и приводим в нормальный вид
-            string query = "SELECT domain_name, LEFT(expire_date, LEN(expire_date) - 8) AS expire_date, days_left FROM dbo.Domains ORDER BY days_left";
+            string query = "SELECT domain_name, expire_date, days_left FROM dbo.Domains ORDER BY days_left";
             SqlDataReader reader = DBManager.ExecuteQuery(query);
             List<string[]> data = new List<string[]>();
+
             while (reader.Read())
             {
                 string[] row = new string[3];
                 row[0] = reader[0].ToString();
-                row[1] = reader[1].ToString();
-                row[2] = reader[2].ToString();
+
+                // Получаем дату из базы данных (например, "2024-02-01")
+                string dbDate = reader[1].ToString();
+
+                // Преобразуем дату из строки в объект DateTime
+                DateTime dateValue;
+                if (DateTime.TryParse(dbDate, out dateValue))
+                {
+                    // Форматируем дату в строку "dd.MM.yyyy" (например, "01.02.2024")
+                    row[1] = dateValue.ToString("dd.MM.yyyy");
+
+                    // Вычисляем разницу между этой датой и текущей датой
+                    TimeSpan difference = dateValue - DateTime.Now;
+                    // Записываем разницу в днях в row[2]
+                    row[2] = Convert.ToInt32(difference.TotalDays).ToString();
+                }
+                else
+                {
+                    // Если формат даты некорректен, оставляем значение как есть
+                    row[1] = dbDate;
+                    row[2] = "Некорректная дата";
+                }
+
                 data.Add(row);
             }
+
             reader.Close();
             DBManager.CloseConnection();
             return data;
