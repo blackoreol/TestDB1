@@ -51,7 +51,7 @@ namespace TestDB1
             string tableName = "dbo.Domains";
             string columnName = "domain_name";
 
-            string valueToCheck = textBox3.Text; // Замените на нужное значение
+            string valueToCheck = DomainForm_textBox3.Text; // Замените на нужное значение
 
             bool found = dataChecker.CheckValueInDatabase(tableName, columnName, valueToCheck);
 
@@ -64,9 +64,9 @@ namespace TestDB1
                     CommandType = CommandType.Text,
                     CommandText = update_query
                 };
-                update_command.Parameters.AddWithValue("@domain_n", textBox3.Text);
-                update_command.Parameters.AddWithValue("@days_l", textBox2.Text);
-                update_command.Parameters.AddWithValue("@date", textBox2.Text);
+                update_command.Parameters.AddWithValue("@domain_n", DomainForm_textBox3.Text);
+                update_command.Parameters.AddWithValue("@days_l", DomainForm_textBox2.Text);
+                update_command.Parameters.AddWithValue("@date", DomainForm_textBox2.Text);
                 update_command.ExecuteNonQuery();
                 MessageBox.Show("Обновлено успешно");
             }
@@ -78,9 +78,9 @@ namespace TestDB1
                     CommandType = CommandType.Text,
                     CommandText = insert_query
                 };
-                insert_command.Parameters.AddWithValue("@domain_n", textBox3.Text);
-                insert_command.Parameters.AddWithValue("@days_l", textBox2.Text);
-                insert_command.Parameters.AddWithValue("@date_n", textBox1.Text);
+                insert_command.Parameters.AddWithValue("@domain_n", DomainForm_textBox3.Text);
+                insert_command.Parameters.AddWithValue("@days_l", DomainForm_textBox2.Text);
+                insert_command.Parameters.AddWithValue("@date_n", DomainForm_textBox1.Text);
                 insert_command.ExecuteNonQuery();            
                 MessageBox.Show($"Ошибка: Значение '{valueToCheck}' не найдено в таблице.Добавлено.");
             }
@@ -101,18 +101,18 @@ namespace TestDB1
             }       
         }
 
-        private void TextBox1_Click(object sender, EventArgs e)
+        private void DomainForm_TextBox1_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
+            DomainForm_textBox1.Clear();
         }
-        private void TextBox3_Click(object sender, EventArgs e)
+        private void DomainForm_TextBox3_Click(object sender, EventArgs e)
         {
-            textBox2.Clear();
+            DomainForm_textBox2.Clear();
         }
 
-        private void TextBox2_Click(object sender, EventArgs e)
+        private void DomainForm_TextBox2_Click(object sender, EventArgs e)
         {
-            textBox2.Clear();
+            DomainForm_textBox2.Clear();
         }
     }
 }

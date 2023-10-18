@@ -31,8 +31,8 @@ namespace TestDB1
                 CommandType = CommandType.Text,
                 CommandText = query
             };
-            command.Parameters.AddWithValue("@login", textBox1.Text);
-            command.Parameters.AddWithValue("@password", textBox1.Text);
+            command.Parameters.AddWithValue("@login", loginForm_textBox1.Text);
+            command.Parameters.AddWithValue("@password", loginForm_textBox1.Text);
 
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read() == true)
@@ -52,13 +52,13 @@ namespace TestDB1
             form1.ShowDialog();
         }
 
-        private void TextBox1_Click(object sender, System.EventArgs e)
+        private void LoginForm_TextBox1_Click(object sender, System.EventArgs e)
         {
-            textBox1.Clear();
+            loginForm_textBox1.Clear();
         }
-        private void TextBox2_Click(object sender, System.EventArgs e)
+        private void LoginForm_TextBox2_Click(object sender, System.EventArgs e)
         {
-            textBox2.Clear();
+            loginForm_textBox2.Clear();
         }
     }
 }
