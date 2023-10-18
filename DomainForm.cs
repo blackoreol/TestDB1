@@ -44,12 +44,13 @@ namespace TestDB1
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            string update_query = "update dbo.Domains set domain_name=@domain_n,days_left=@days_l where domain_name=@domain_n";
-            string insert_query = "INSERT INTO dbo.Domains(domain_name,days_left) VALUES (@domain_n,@days_l)";
+            string update_query = "update dbo.Domains set domain_name=@domain_n,days_left=@days_l,expire_date=@date_n where domain_name=@domain_n";
+            string insert_query = "INSERT INTO dbo.Domains(domain_name,days_left,expire_date) VALUES (@domain_n,@days_l,@date_n)";
             dbManager.OpenConnection();
             DataChecker dataChecker = new DataChecker();
             string tableName = "dbo.Domains";
             string columnName = "domain_name";
+
             string valueToCheck = textBox3.Text; // Замените на нужное значение
 
             bool found = dataChecker.CheckValueInDatabase(tableName, columnName, valueToCheck);
@@ -65,6 +66,7 @@ namespace TestDB1
                 };
                 update_command.Parameters.AddWithValue("@domain_n", textBox3.Text);
                 update_command.Parameters.AddWithValue("@days_l", textBox2.Text);
+                update_command.Parameters.AddWithValue("@date", textBox2.Text);
                 update_command.ExecuteNonQuery();
                 MessageBox.Show("Обновлено успешно");
             }
@@ -78,6 +80,7 @@ namespace TestDB1
                 };
                 insert_command.Parameters.AddWithValue("@domain_n", textBox3.Text);
                 insert_command.Parameters.AddWithValue("@days_l", textBox2.Text);
+                insert_command.Parameters.AddWithValue("@date_n", textBox1.Text);
                 insert_command.ExecuteNonQuery();            
                 MessageBox.Show($"Ошибка: Значение '{valueToCheck}' не найдено в таблице.Добавлено.");
             }

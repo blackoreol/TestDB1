@@ -37,6 +37,7 @@
             this.iNSERTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.days_left = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.connectorsBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -106,6 +108,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.textBox2);
             this.tabPage2.Controls.Add(this.textBox3);
             this.tabPage2.Controls.Add(this.button1);
@@ -119,9 +123,18 @@
             this.tabPage2.Text = "Обновить домен";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(46, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 16);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Дата";
+            // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(97, 90);
+            this.textBox2.Location = new System.Drawing.Point(97, 73);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 9;
@@ -135,7 +148,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(97, 133);
+            this.button1.Location = new System.Drawing.Point(97, 149);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 8;
@@ -146,11 +159,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 93);
+            this.label2.Location = new System.Drawing.Point(46, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 16);
+            this.label2.Size = new System.Drawing.Size(32, 16);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Дата";
+            this.label2.Text = "Дни";
             // 
             // label3
             // 
@@ -226,7 +239,14 @@
             this.tabControl1.TabIndex = 7;
             this.tabControl1.Click += new System.EventHandler(this.TabControl1_Click);
             // 
-            // Form1
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(97, 110);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 12;
+            // 
+            // DomainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(398, 503);
@@ -234,7 +254,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "DomainForm";
             this.Text = "Работа с доменами";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.menuStrip1.ResumeLayout(false);
@@ -270,6 +290,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn days_left;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
