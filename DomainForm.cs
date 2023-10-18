@@ -105,13 +105,12 @@ namespace TestDB1
         {
             textBox1.Clear();
         }
-
-        private void TextBox2_TextChanged(object sender, EventArgs e)
+        private void TextBox3_Click(object sender, EventArgs e)
         {
             textBox2.Clear();
         }
 
-        private void TextBox3_TextChanged(object sender, EventArgs e)
+        private void TextBox2_Click(object sender, EventArgs e)
         {
             textBox2.Clear();
         }
